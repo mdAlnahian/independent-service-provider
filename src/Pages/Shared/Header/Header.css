@@ -1,0 +1,11 @@
+.link-font{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:576px) {
+    .link-font{
+    font-size: 16px;
+    font-weight: bold;
+    }
+}

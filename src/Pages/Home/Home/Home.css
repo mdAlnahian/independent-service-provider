@@ -1,0 +1,33 @@
+.background-banner{
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    opacity: 0.5;
+}
+.bannner-text{
+    position: absolute;
+    top: 40%;
+    left: 20%; 
+    right: 20%;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bolder;
+    font-size: 50px;    
+}
+
+@media screen and (max-width:576px) {
+    .background-banner{
+        height: 80vh;
+    }
+    .bannner-text{
+    top: 45%;
+    left: 8%;
+    right: 8%;
+    font-size: 30px;
+    }
+}

@@ -1,0 +1,26 @@
+.lawinfo-data{
+    display: flex;
+}
+.lawinfo-data-text{
+    width: 70%;
+    margin-top: 15%;
+}
+.lawinfo-data-image{
+    width: 30%;
+    margin-left: 50px;
+}
+
+@media screen and (max-width:576px) {
+    .lawinfo-data{
+    display: flex;
+    flex-direction: column;
+    }
+    .lawinfo-data-text{
+    width: 100%;
+    margin-top: 0%;
+    }
+    .lawinfo-data-image{
+    width: 100%;
+    margin-left: 0px;
+    }
+}
