@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import "./Login.css";
 import auth from "../../../firebase.init";
 
@@ -38,6 +38,20 @@ const Login = () => {
         signInWithEmailAndPassword(email,password);
     }
 
+
+    const [sendPasswordResetEmail] =
+      useSendPasswordResetEmail(auth);
+
+    const resetPassword =async()=>{
+
+        if (email) {
+          await sendPasswordResetEmail(email);
+          alert("Sent email");
+        } else {
+          alert("plz enter your email");
+        }
+    }
+
   return (
     <div className="form-container mt-5 about">
       <div className="">
@@ -65,7 +79,10 @@ const Login = () => {
           <input className="mb-4 form-submit" type="submit" value="Login" />
         </form>
         <p>
-          New to lawyer Ahamed ? <Link to="/register">Please Redister</Link>
+          New to lawyer Ahamed ? <Link to="/register">Please Register</Link>
+        </p>
+        <p>
+          Forget Password ? <button className="btn btn-link"  onClick={resetPassword}>Reset Password</button>
         </p>
         <div className="or-style">
           <div className="or-data"></div>
