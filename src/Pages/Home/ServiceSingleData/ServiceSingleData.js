@@ -65,12 +65,10 @@ const ServiceSingleData = () => {
             .then((data) => setSingleServices(data));
         }, []);
 
-
   const shit = singleServices.find(
     (singleService) => singleService.id === serviceId
   )
   
-
   return (
     <div className="about">
       <h2 className="w-75 mx-auto text-center mt-4">
