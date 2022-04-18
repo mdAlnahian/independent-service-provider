@@ -65,21 +65,20 @@ const ServiceSingleData = () => {
             .then((data) => setSingleServices(data));
         }, []);
 
-        const shit = singleServices.find(
-          (singleService) => singleService.id === serviceId
-        );
-        
+
+  const shit = singleServices.find(
+    (singleService) => singleService.id === serviceId
+  )
+  
 
   return (
-    <div className='about'>
-      <h2 className="text-center">
-        welcome to single service data :{serviceId}
+    <div className="about">
+      <h2 className="w-75 mx-auto text-center mt-4">
+        Single Service data :{serviceId}
       </h2>
-      {/* {
-         singleServices.find((singleService) => (singleService.id === serviceId)
-        )
-          
-      } */}
+      <h1 className="w-75 mx-auto text-center mt-5">
+        Thanks for selected service number {serviceId} .
+      </h1>
     </div>
   );
 };
