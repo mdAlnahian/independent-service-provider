@@ -1,5 +1,17 @@
-# Getting Started with Create React App
 
+# Al's LAWYERS
+* This website is for a lawyer who provides different services
+* learn about law
+* why law is important 
+
+# FrameWork Or Library Used
+* React js
+* React Bootstrap
+* Firebase for authentication and authorization
+* React toastify
+* React Router
+* React firebase hook
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -44,18 +56,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-## Al's LAWYERS
-*This website is for a lawyer who provides different services
-*learn about law
-*why law is important 
 
-### FrameWork Or Library Used
-*React js
-*React Bootstrap
-*Firebase for authentication and authorization
-*React toastify
-*React Router
-*React firebase hook
 
 ### Code Splitting
 
