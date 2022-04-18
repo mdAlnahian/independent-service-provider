@@ -65,6 +65,8 @@ const ServiceSingleData = () => {
             .then((data) => setSingleServices(data));
         }, []);
 
+  // uanble to use find method in react js
+  
   const shit = singleServices.find(
     (singleService) => singleService.id === serviceId
   )

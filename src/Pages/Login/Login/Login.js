@@ -1,8 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import "./Login.css";
 import auth from "../../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 
@@ -42,12 +44,11 @@ const Login = () => {
       useSendPasswordResetEmail(auth);
 
     const resetPassword =async()=>{
-
-    if (email) {
+      if (email) {
           await sendPasswordResetEmail(email);
-          alert("Sent email");
+          toast.success("Email sent to your device");
         } else {
-          alert("plz enter your email");
+          toast.error("plz enter your email");
         }
     }
 
@@ -74,15 +75,19 @@ const Login = () => {
               required
             ></input>
           </div>
-          <p style={{color:'red'}}>{error?.message}</p>
+          <p style={{ color: "red" }}>{error?.message}</p>
           <input className="mb-4 form-submit" type="submit" value="Login" />
         </form>
         <p>
           New to lawyer Ahamed ? <Link to="/register">Please Register</Link>
         </p>
         <p>
-          Forget Password ? <button className="btn btn-link"  onClick={resetPassword}>Reset Password</button>
+          Forget Password ?{" "}
+          <button className="btn btn-link" onClick={resetPassword}>
+            Reset Password
+          </button>
         </p>
+        <ToastContainer />
         <div className="or-style">
           <div className="or-data"></div>
           <div>or</div>
@@ -90,12 +95,26 @@ const Login = () => {
         </div>
         <div>
           <div className="go-button mb-2 mt-2">
-            <p className="mt-2" onClick={()=>{signInWithGoogle()}}>Continue With Google</p>
+            <p
+              className="mt-2"
+              onClick={() => {
+                signInWithGoogle();
+              }}
+            >
+              Continue With Google
+            </p>
           </div>
         </div>
         <div>
           <div className="go-button mb-2 mt-2">
-            <p className="mt-2" onClick={()=>{signInWithGithub();}}>Continue With Github</p>
+            <p
+              className="mt-2"
+              onClick={() => {
+                signInWithGithub();
+              }}
+            >
+              Continue With Github
+            </p>
           </div>
         </div>
       </div>
