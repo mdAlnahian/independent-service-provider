@@ -38,13 +38,12 @@ const Login = () => {
         signInWithEmailAndPassword(email,password);
     }
 
-
     const [sendPasswordResetEmail] =
       useSendPasswordResetEmail(auth);
 
     const resetPassword =async()=>{
 
-        if (email) {
+    if (email) {
           await sendPasswordResetEmail(email);
           alert("Sent email");
         } else {
